@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: green;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        section {
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        section h2 {
+            color: #333;
+        }
+
+        section p {
+            color: #555;
+        }
+
+        .scrolled {
+            background-color: green;
+        }
+
+        .content-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section-container {
+            padding: 20px;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-container">
+        <section id="home">
+            <div class="section-container">
+                <h2>Welcome to Our Website</h2>
+                <p>We offer a variety of services to help you achieve your goals. Explore our website to learn more.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="section-container">
+                <h2>About Us</h2>
+                <p>Our company has been providing exceptional services for over 10 years. We are dedicated to delivering high-quality solutions to meet your needs.</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="section-container">
+                <h2>Our Services</h2>
+                <ul>
+                    <li>Web Development</li>
+                    <li>Mobile App Development</li>
+                    <li>Consulting</li>
+                    <li>Cloud Solutions</li>
+                </ul>
+                <p>We specialize in creating custom solutions to suit your business needs.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-container">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or would like to work with us, feel free to reach out!</p>
+                <p>Email: contact@ourwebsite.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        window.onscroll = function() {
+            var navbar = document.getElementById("navbar");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        };
+    </script>
+
+</body>
+</html>
